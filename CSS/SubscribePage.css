@@ -390,6 +390,7 @@ Readtime Bar START
         left: 0;
         bottom: 0;
         width: 100%;
+        height: 1.3rem;
     }
 
     #subscribe-page .official-footer p{
