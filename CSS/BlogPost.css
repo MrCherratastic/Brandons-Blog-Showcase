@@ -46,7 +46,7 @@ Global Styles
 
 #blog-post-page p {
   margin-bottom: 1.25rem;
-  color: hsl(210, 22%, 49%);
+  /* color: hsl(210, 22%, 49%); */
   font-size: 22px;
   font-weight: bold;
 }
@@ -204,6 +204,40 @@ Readtime Bar START
   Readtime Bar END
   ===============
   */
+
+  /*
+=============== 
+Scroll Link Start
+===============
+*/
+
+#blog-post-page .top-link {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: -webkit-linear-gradient(top, #d6159f, #d69465);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  color: white;
+  animation: bounce 2s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+}
+#blog-post-page .show-link {
+  visibility: visible;
+  z-index: 100;
+}
+
+
+  /*
+=============== 
+Scroll Link End
+===============
+*/
 
 #blog-post-page .post-grid{
         display: grid;
@@ -637,6 +671,7 @@ RELATED ARTICLES JS REVEAL END
 
     #blog-post-page .blog-content-subheading{
       font-weight: bold;
+      color: hsl(210, 22%, 49%);
      }
 
      #blog-post-page .blog-pic{
@@ -697,7 +732,7 @@ Footer And Social Share Start
       grid-area: LinkedIn;
     }
 
-    #blog-post-page .official-footer{
+    #blog-post-page .official-footer {
         background-color: black;
         position: fixed;
         display: flex;
@@ -709,6 +744,10 @@ Footer And Social Share Start
         bottom: 0;
         width: 100%;
     }
+
+    #blog-post-page .official-footer p{
+      font-weight: lighter;
+  }
 
     /*
 =============== 
@@ -754,6 +793,10 @@ Media Queries
     height: 12px;
     width: 29px;
     grid-area: LinkedIn;
+  }
+
+  #blog-post-page h1{
+    font-size: 1.25rem;
   }
 
   #blog-post-page .blog-content-subheading {
@@ -886,8 +929,8 @@ Media Queries
   #blog-post-page .aside-author-info{
     font-size: 20px;
   }
-  #blog-post-page h1 {
-    font-size: 2.5rem;
+  #blog-post-page h1{
+    font-size: 1.85rem;
   }
 
   #blog-post-page li{

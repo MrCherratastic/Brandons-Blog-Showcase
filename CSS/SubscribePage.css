@@ -208,7 +208,7 @@ Readtime Bar START
     position: fixed;
     bottom: 3rem;
     right: 3rem;
-    background: var(--blueish-grey);
+    background: -webkit-linear-gradient(top, #d6159f, #d69465);
     width: 2rem;
     height: 2rem;
     display: grid;
@@ -392,6 +392,10 @@ Readtime Bar START
         width: 100%;
     }
 
+    #subscribe-page .official-footer p{
+        color: white;
+    }
+
     #subscribe-page .collapsible-wrap{
       display: flex;
       justify-content: center;
@@ -530,7 +534,7 @@ and (orientation : portrait) {
     }
     
     #subscribe-page h1{
-      font-size:4rem;
+      font-size:3rem;
     }
     
     #subscribe-page p{

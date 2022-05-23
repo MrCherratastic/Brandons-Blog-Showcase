@@ -28,7 +28,7 @@
       <!-- nav header -->
       <div class="nav-header">
         <img src="../Images/MrCherratasticLogo.png" class="logo" alt="logo" />
-        <button class="portrait-toggle"><i class="fa fa-faw fa-mobile"></i></button>
+        <button class="portrait-toggle"><i class="fa fa-faw fa-bars"></i></button>
       </div>
       <!-- links -->
       <ul class="links">
@@ -77,9 +77,9 @@
   </div>
   <!--Grid End-->
   <!--Official Footer Start-->
-  <div class="official-footer">
-    <footer>© MrCherratastic Productions All Rights Reserved 2022</footer>
-  </div>
+  <footer class="official-footer">
+    <p>&nbsp&copy;&nbsp<span id="copyrightdate">2022</span>&nbspMrCherratastic Productions All Rights Reserved</p>
+  </footer>
   <!--Official Footer End-->
 <!-- Read Progress Bar -->
 <div id="progress-bar"></div>
@@ -97,6 +97,10 @@
    links.classList.add("reveal-links");
    }
    });
+
+   //Date year for copyright
+  const copyrightDate = document.getElementById("copyrightdate");
+  copyrightDate.innerHTML = new Date().getFullYear();
 
 
    //Progress Bar

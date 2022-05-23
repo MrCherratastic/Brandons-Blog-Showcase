@@ -165,7 +165,7 @@ Scroll Link Start
   position: fixed;
   bottom: 3rem;
   right: 3rem;
-  background: var(--blueish-grey);
+  background: -webkit-linear-gradient(top, #d6159f, #d69465);
   width: 2rem;
   height: 2rem;
   display: grid;
