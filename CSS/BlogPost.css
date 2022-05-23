@@ -767,7 +767,7 @@ Media Queries
 /* Mobile Portrait */
 @media only screen and (min-device-width : 50px) and (max-device-width : 766px) and (orientation: portrait) {
   #blog-post-page .official-footer{
-    font-size: 0.80rem;
+    font-size: .65rem;
   }
 
   #blog-post-page .portrait-toggle{
