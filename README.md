@@ -23,33 +23,11 @@ Structure
 
 - Custom Design: Randomized images w/ custom layout, and styling.
 
-Foundations/Building Blocks
-
-- Typography: Custom design for typography with at least 3 unique properties for each typography selector
-Headers (h1 to h3 at minimum) <h1>
-Paragraph Text <p>
-a. Bold
-b. Italic
-c. Underlined
-Links <a>
-Quotes
-
-- Components:
-
-The following are used in the webpage:
-
-Image(s)
-Image caption
-Buttons
-Card
-
 - Multi-Device Web Design:
 
 Pages are mobile-friendly and display correctly on all display sizes (mobile, tablet, desktop).
 
 - Valid HTML:
-
-HTML5 semantic tags such as <header>, <footer>, <article>, <section> , etc. are used to add meaning to the code.
 
 No div or section selectors are without a CSS class or id.
 
