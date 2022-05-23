@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang= "en">
+        <head>
+          <meta charset="utf-8" /> 
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Brandon's Blog</title>
+              <link rel="stylesheet" href="CSS/FinalBoss.css" type="text/css">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Festive">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        </head>
+        <body id="main-page">
+          <header id="returnHome">
+            <!--Nav Start-->
+            <nav>
+                <!--Nav-->
+                <div class="nav-container">
+                  <!-- nav header -->
+                  <div class="nav-header">
+                    <img src="Images/MrCherratasticLogo.png" class="logo" alt="logo"/>
+                   <button class="portrait-toggle"><i class="fa fa-faw fa-mobile"></i></button>
+                  </div>
+                  <!-- links -->
+                  <ul class="links">
+                    <li>
+                      <a class="link-item" href="Index.html"><i class="fa fa-fw fa-home"></i>Home</a>
+                    </li>
+                      <a class="link-item" href="Home\SubscribePage.html"><i class="fa fa-fw fa-envelope"></i>Subscribe</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div id="progress-bar"></div>
+                <!--Nav End-->
+                <!--Blog Start-->
+                <div class="blog-container">
+                    <div class="blog-card">
+                      <div class="blog-cover" id="blog-post1" title="Blog Cover"></div>
+                        <div class="info-grid">
+                            <div class="info-box" id="author"><i class="fas fa-glasses"></i> <strong>Author:</strong> Brandon Cherry</div>
+                            <div class="info-box" id="info-title"><h1>A New Season</h1></div>
+                            <div class="info-box" id="info-date"><i class="fas fa-book"></i> <strong>Published:</strong>  2/7/2022</div>
+                            <div class="info-box" id="info-read"><i class="fas fa-stopwatch"></i> <strong>Read Time:</strong> 1 min</div>
+                            <div class="info-box" id="info-button"><a href="Home/BlogPost1.html" class="infoButton">Read</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                      <div class="blog-cover" id="blog-post2" title="Blog Cover"></div>
+                      <div class="info-grid">
+                        <div class="info-box" id="author"><i class="fas fa-glasses"></i> <strong>Author:</strong> Brandon Cherry</div>
+                        <div class="info-box" id="info-title"><h1>Striving Towards Greatness</h1></div>
+                        <div class="info-box" id="info-date"><i class="fas fa-book"></i> <strong>Published:</strong>  2/17/2022</div>
+                        <div class="info-box" id="info-read"><i class="fas fa-stopwatch"></i> <strong>Read Time:</strong> 2 min</div>
+                        <div class="info-box" id="info-button"><a href="Home/BlogPost2.html" class="infoButton">Read</a></div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                      <div class="blog-cover" id="blog-post3" title="Blog Cover"></div>
+                      <div class="info-grid">
+                        <div class="info-box" id="author"><i class="fas fa-glasses"></i> <strong>Author:</strong> Brandon Cherry</div>
+                        <div class="info-box" id="info-title"><h1>Journey To A Unknown End</h1></div>
+                        <div class="info-box" id="info-date"><i class="fas fa-book"></i> <strong>Published:</strong>  2/22/2022</div>
+                        <div class="info-box" id="info-read"><i class="fas fa-stopwatch"></i> <strong>Read Time:</strong> 3 min</div>
+                        <div class="info-box" id="info-button"><a href="Home/BlogPost3.html" class="infoButton">Read</a></div>
+                        </div>
+                    </div>
+                </div>
+                  <!--Blog End-->
+            <div class="official-footer">
+                <footer>© MrCherratastic Productions All Rights Reserved 2022</footer>
+            </div>
+            <!-- Read Progress Bar -->
+          <div id="progress-bar"></div>
+          <!--Back To Top Button-->
+             <a href="#returnHome" class="scroll-link top-link"><i class="fas fa-arrow-up"></i></a>
+            <script>
+                      const portraitToggle = document.querySelector(".portrait-toggle");
+                      const links = document.querySelector(".links");
+
+                      portraitToggle.addEventListener("click", function (){
+                      if(links.classList.contains("reveal-links")) {
+                        links.classList.remove("reveal-links");
+                      }else{
+                        links.classList.add("reveal-links");
+                      }
+                    });
+
+                    const navbar = document.getElementById("nav");
+                    const topLink = document.querySelector(".top-link");
+
+                    window.addEventListener("scroll", function () {
+
+                    // setup back to top link
+                    let scrollHeight = window.pageYOffset
+                    if (scrollHeight > 200) {
+                    topLink.classList.add("show-link");
+                    } else {
+                    topLink.classList.remove("show-link");
+                    }
+                     });
+
+                    //Progress Bar
+                  function updateProgressBar(){
+                    //deconstructing to declare and grab two vars
+                    const {scrollTop, scrollHeight} = document.documentElement;
+                    //calculations and convert to percentage
+                    const scrollPercent = scrollTop / (scrollHeight - window.innerHeight) * 100 + '%';
+                    //set dynamic updating to the width with the var declared w/ JS styling
+                    document.querySelector("#progress-bar").style.setProperty('--progress', scrollPercent);
+                  }
+                  //On Scroll call this functiion
+                  document.addEventListener('scroll', updateProgressBar);
+            </script>
+        </body>
+    </html>    

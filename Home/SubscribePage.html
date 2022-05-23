@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Subscribe Today</title>
+  <link rel="stylesheet" href="../CSS/FinalBoss.css" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Festive">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quintessential">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Economica">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=The+Nautigal">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <script src="https://kit.fontawesome.com/a16a2625cf.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+</head>
+
+<body id="subscribe-page">
+  <header id="returnHome">
+  <!--Nav Start-->
+  <nav>
+    <!--Nav-->
+    <div class="nav-container">
+      <!-- nav header -->
+      <div class="nav-header">
+        <img src="../Images/MrCherratasticLogo.png" class="logo" alt="logo" />
+        <button class="portrait-toggle"><i class="fa fa-faw fa-mobile"></i></button>
+      </div>
+      <!-- links -->
+      <ul class="links">
+        <li>
+          <a class="link-item" href="../Index.html"><i class="fa fa-fw fa-home"></i>Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--Nav End-->
+  <!--Grid Start-->
+  <div class="sub-grid">
+    <div class="sub-box" id="wallpaper-section">
+      <div class="wallpaper-background" title="Fancy Photo">
+        <div class="small-wallpaper" title="Fancy Photo" id="smallpic"></div>
+      </div>
+    </div>
+    <div class="sub-box" id="subscribe-form">
+      <div id="form-flex">
+        <div class="form-box" id="header">
+          <h4>Don't forget to check out our socials!</h4>
+        </div>
+        <div class="form-box" id="form-card">
+          <form action="#" class="form-action">
+            <div class="text-wrap">
+              <h2>Subscribe</h2>
+              <h1>To Get Access</h1>
+              <p>Subscribe today and get a free invite for a friend we'll cover the snacks!</p>
+            </div>
+            <div class="form-controls">
+              <label for="email"></label>
+              <input type="email" placeholder="Your Email Here" id="email-label">
+              <button class="subscribe-button">Subscribe</button>
+            </div>
+          </form>
+
+        </div>
+        <div class="form-box" id="footer">
+          <h3>Welcome To The <span class="special-underline">Club!</span></h3>
+        </div>
+        <div class="form-box" id="social-icons"><i class="fab fa-youtube"></i>&nbsp;&nbsp;<a
+            href="https://www.linkedin.com/in/brandon-cherry-512992141/" target="_blank">&nbsp;&nbsp;<i
+              class="fab fa-linkedin"></i></a>&nbsp;&nbsp;<i class="fab fa-facebook"></i></div>
+      </div>
+    </div>
+  </div>
+  <!--Grid End-->
+  <!--Official Footer Start-->
+  <div class="official-footer">
+    <footer>© MrCherratastic Productions All Rights Reserved 2022</footer>
+  </div>
+  <!--Official Footer End-->
+<!-- Read Progress Bar -->
+<div id="progress-bar"></div>
+<!--Back To Top Button-->
+   <a href="#returnHome" class="scroll-link top-link"><i class="fas fa-arrow-up"></i></a>
+  <script>
+   const portraitToggle = document.querySelector(".portrait-toggle");
+   const links = document.querySelector(".links");
+   const scrollHeight = window.pageYOffset;//gets scroll value
+
+   portraitToggle.addEventListener("click", function (){
+   if(links.classList.contains("reveal-links")) {
+   links.classList.remove("reveal-links");
+   }else{
+   links.classList.add("reveal-links");
+   }
+   });
+
+
+   //Progress Bar
+   function updateProgressBar(){
+   //deconstructing to declare and grab two vars
+   const {scrollTop, scrollHeight} = document.documentElement;
+   //calculations and convert to percentage
+   const scrollPercent = scrollTop / (scrollHeight - window.innerHeight) * 100 + '%';
+   //set dynamic updating to the width with the var declared w/ JS styling
+   document.querySelector("#progress-bar").style.setProperty('--progress', scrollPercent);
+   }
+   //On Scroll call this functiion
+   document.addEventListener('scroll', updateProgressBar);
+
+   const navbar = document.getElementById("nav");
+   const topLink = document.querySelector(".top-link");
+
+   window.addEventListener("scroll", function () {
+
+   // setup back to top link
+   let scrollHeight = window.pageYOffset
+   if (scrollHeight > 200) {
+   topLink.classList.add("show-link");
+   } else {
+   topLink.classList.remove("show-link");
+   }
+   });
+  </script>
+</body>
+
+</html>

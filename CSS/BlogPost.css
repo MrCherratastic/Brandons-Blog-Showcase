@@ -1,0 +1,1197 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+
+  /*Awesome Variables */
+  --blueish-grey: hsl(209, 34%, 30%);
+  --cool-grey: hsl(210, 22%, 49%);
+  --mixem:linear-gradient(90deg, #c0c0c0, #f7e4e5);
+  --cherry-red: rgb(226,6,44);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-grey: hsl(209, 61%, 16%);
+}
+  
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#blog-post-page body {
+  font-family: "Open Sans", sans-serif;
+  background: white;
+  color: var(--mixem);
+  line-height: 1.5;
+
+}
+
+#blog-post-page ul{
+  list-style: none;
+  list-style-type: none;
+}
+
+#blog-post-page p {
+  margin-bottom: 1.25rem;
+  color: hsl(210, 22%, 49%);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#blog-post-page a{
+  text-decoration: none;
+}
+@media screen and (min-width: 800px) {
+  #blog-post-page h1 {
+    font-size: 3rem;
+  }
+  #blog-post-page h2 {
+    font-size: 2.5rem;
+  }
+  #blog-post-page h3 {
+    font-size: 1.75rem;
+  }
+  #blog-post-page h4 {
+    font-size: 1.55rem;
+  }
+  #blog-post-page body {
+    font-size: 1rem;
+  }
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+#blog-post-page nav {
+  background: white;
+  box-shadow: var(--light-shadow);
+}
+#blog-post-page .nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#blog-post-page .logo {
+  height: 70px;
+}
+#blog-post-page .links a {
+  color: var(--cool-grey);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+
+}
+#blog-post-page .links a:hover {
+  background: transparent;
+  color: var(--cherry-red);
+  padding-left: 1.5rem;
+}
+
+#blog-post-page .link-item{
+  text-decoration: none;
+}
+
+#blog-post-page .links{
+  height: 0;
+  overflow: hidden;
+}
+
+#blog-post-page .reveal-links{
+  height: 5rem;
+}
+
+#blog-post-page .portrait-toggle {
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+#blog-post-page .portrait-toggle:hover{
+  color: var(--cherry-red);
+  transform: rotate(90deg);
+}
+
+@media screen and (min-width: 800px) {
+  #blog-post-page .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  #blog-post-page .nav-header {
+    padding: 0;
+  }
+ 
+  #blog-post-page .links {
+    height: auto;
+    display: flex;
+    overflow: hidden;
+
+  }
+  #blog-post-page .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  #blog-post-page .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+
+  #blog-post-page .portrait-toggle{
+    display: none;
+  }
+  
+}
+
+  /*
+=============== 
+Navbar End
+===============
+*/
+
+
+  /*
+=============== 
+Readtime Bar START
+===============
+*/
+
+
+#blog-post-page #progress-bar{
+  /*DECLARE VAR SET WIDTH VALUE TO VAR */
+    --progress: 0;
+    width: var(--progress);
+    background-color: var(--cherry-red);
+    height: 1px;
+    position: fixed;
+    box-shadow:
+    1.5px 1.5px 0 rgb(11,211,211),
+    -1px -1px 0 rgb(248,144,231),  
+    1px -1px 0 rgb(255,255,255),
+    -1px 1px 0 rgb(208,208,208),
+    1px 1px 0 rgb(0,0,0);;
+    display: flex;
+    flex: wrap;
+    bottom:0;
+    left: 0;
+    justify-content: center;
+    text-align: center;
+    /*Fix position and put infront of footer*/
+    z-index: 100;
+  }
+    /*
+  =============== 
+  Readtime Bar END
+  ===============
+  */
+
+#blog-post-page .post-grid{
+        display: grid;
+        grid-template-areas: 
+        ". head"
+        "aside main"
+        ". footer";
+        grid-gap: 40px;
+        padding-right: 40px;
+        grid-template-rows: 50px 1fr 30px;
+        grid-template-columns: 19% 1fr;
+        width: 100vw;
+    }
+
+    #blog-post-page #blogHeader{
+        grid-area: head;
+        font-family: "Festive" , sans-serif;
+        font-size: xx-large;
+        text-align: center;
+    }
+/*
+=============== 
+Aside Details Sart
+=======
+*/
+
+
+#blog-post-page #blogAside{
+        grid-area: aside;
+        /* border: 3px solid rgb(240, 166, 6); */
+        background: transparent;
+        /* box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3); */
+        width: 100%;
+    } 
+
+    #blog-post-page .aside-grid{
+      display: grid;
+      grid-auto-flow: row;
+      justify-content: space-around;
+      grid-auto-rows: auto;
+      }
+
+      #blog-post-page .aside-grid-box{
+        width: 100%;
+        padding: 8px;
+      }
+
+/*
+=============== 
+Avatar CSS Start
+===============
+*/
+#blog-post-page .avatar-wallpaper{
+      background: url('../Images/wallpaper.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height:80px;
+
+    }
+    
+    #blog-post-page .avatar{
+        border: 5px solid white;
+        height: 250px;
+        max-width: 250px;
+        width: 100%;
+        margin: auto;
+        border-radius: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../Images/Brandons-Avatar.jpg');
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    @media screen and (min-width:800px) { 
+    }
+    #blog-post-page .author-socials{
+        position: relative;
+        bottom: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 1.25rem;
+      }
+
+    /*
+=============== 
+Avatar CSS End
+===============
+*/
+
+#blog-post-page .fa-youtube{
+        background: white;
+        color: var(--cherry-red);
+      }
+
+      #blog-post-page .fa-facebook{
+        background: white;
+        color: blue;
+      }
+      
+
+
+      #blog-post-page .aside-author-info{
+        font-family: "Tangerine";
+        text-shadow: 4px 4px 4px #aaa;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #blog-post-page .aside-author-list{
+      margin-bottom: 25px;
+      text-align: left;
+      padding: 4px;
+      font-size: 19px;
+      font-variant: petite-caps;
+      position: relative;
+      bottom: 35px;
+      line-height: 2;
+    }
+
+    #blog-post-page .aside-list-item{
+      text-decoration: underline;
+    }
+
+    #blog-post-page .aside-bio-frame{
+      overflow: hidden;
+      background: url('../Images/border2.png');
+      background-size: cover;
+      background-position: center;
+      padding-block: 5px;
+    }
+    #blog-post-page .aside-bio{
+      text-align: center;
+      word-wrap: break-word;
+      font-family: "Quintessential";
+    }
+
+    #blog-post-page .bio-paragraph {
+      margin-bottom: 1rem;
+      color: hsl(210, 22%, 49%);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    #blog-post-page blockquote {
+      margin-bottom: 1rem;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    /*
+=============== 
+Aside Details End
+===============
+*/
+
+#blog-post-page #mainBlog{
+      grid-area: main;
+     }
+
+     #blog-post-page .blog-read-section{
+    font-family: "Quintessential";
+    text-align: center;
+    padding: 10px;
+    }
+
+
+/*
+=============== 
+CSS ONLY RELATED ARTICLES REVEAL START
+*/
+#blog-post-page .collapsible-wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 25px;
+    }
+
+    #blog-post-page .collapse-toggle{
+      max-height: max-content;
+      overflow: hidden;
+    }
+
+    #blog-post-page .collapse-toggle .collapsible-content2{
+
+      height: 0;
+      overflow: hidden;
+      transition: all 0.2s ease-out;
+      }
+
+      #blog-post-page .collapsible-content2{
+        padding: 0 18px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        opacity: 0;
+      }
+
+      #blog-post-page .collapse-toggle input{
+          display: none;
+        }
+
+        #blog-post-page .collapse-toggle input:checked ~ .collapsible-content2{
+          height: fit-content;
+          background: transparent;
+          opacity: 1;
+          top: 0;
+          transition: all 0.3s ease-out;
+          
+        }
+
+        #blog-post-page .collapse-toggle label{
+          position: relative;
+          background: transparent;
+          color: black;
+          text-align: center;
+          display: block;
+          padding: 16px 0;
+          margin-bottom: 10px;
+          cursor: pointer;
+        }
+
+        #blog-post-page .collapse-toggle label:hover{
+          background: rgb(240, 166, 6);
+        }
+
+        #blog-post-page .collapse-toggle label::after{
+          content: '\02795';
+          position: absolute;
+          right: 15px;
+          top:20px;
+          width: 18px;
+          height: 18px;
+        }
+  
+/*
+=============== 
+CSS ONLY RELATED ARTICLES REVEAL END
+===============
+*/
+
+
+/*
+=============== 
+ RELATED ARTICLES JS REVEAL START
+===============
+*/
+#blog-post-page .collapse{
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  padding: 9px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-family: "Quintessential";
+}
+
+#blog-post-page .collapse:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+#blog-post-page .active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+#blog-post-page .active, .collapse:hover{
+  background-color: rgb(240, 166, 6);
+}
+
+#blog-post-page .collapsible-content{
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: space-around;
+  }
+
+/*
+=============== 
+RELATED ARTICLES JS REVEAL END
+===============
+*/
+
+/*
+=============== 
+ RELATED ARTICLES JS REVEAL
+===============
+*/
+#blog-post-page .collapse{
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    padding: 9px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    font-family: "Quintessential";
+  }
+
+  #blog-post-page .collapse:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  #blog-post-page .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+
+  #blog-post-page .active, .collapse:hover{
+    background-color: rgb(240, 166, 6);
+  }
+
+  #blog-post-page .collapsible-content{
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-around;
+    }
+
+/*
+=============== 
+ RELATED ARTICLES JS REVEAL
+===============
+*/
+
+#blog-post-page .collapsible-blog-wrap{ 
+      position: relative;
+      width: 25%;
+    }
+
+    #blog-post-page .collapsible-blog-overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20vh;
+      background: rgba(0, 0, 0, 0.72);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family:"Quintessential";
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    #blog-post-page .collapsible-blog-overlay--blur{
+      backdrop-filter: blur(5px);
+    }
+
+    #blog-post-page .collapsible-blog-overlay:hover {
+      opacity: 1;
+      cursor: pointer;
+
+    }
+
+    #blog-post-page .collapsible-blog-title{
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+
+    #blog-post-page .collapsible-blog-time{
+      font-size: 1.25rem;
+      margin-top: 0.25em;
+      color: white;
+    }
+
+    #blog-post-page #blog-post1{
+      background-image: url('https://source.unsplash.com/random/1');
+
+    }
+    #blog-post-page #blog-post2{
+      background-image: url('https://source.unsplash.com/random/2');
+      
+    }
+    #blog-post-page #blog-post3{
+      background-image: url('https://source.unsplash.com/random/3');
+      
+    }
+
+    #blog-post-page .collapsible-blog-pic{
+      width: 100%;
+      height: 20vh;
+      background: transparent;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border: 3px solid rgb(240, 166, 6);
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+      display: block;
+  }
+  
+  #blog-post-page .blog-content{
+      border: 2px solid black;
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+      text-align: left;
+      justify-content: center;
+      font-family:"Quintessential";
+      padding: 10px;
+    }
+
+    #blog-post-page .blog-content-subheading{
+      font-weight: bold;
+     }
+
+     #blog-post-page .blog-pic{
+      background: transparent;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 37vh;
+      border: 3px solid rgb(240, 166, 6);
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #blog-post-page figure{
+    text-align: center;
+    font-size: .85rem;
+    }
+
+    
+/*
+=============== 
+Footer And Social Share Start
+===============
+*/
+
+#blog-post-page #blogFooter{
+        grid-area: footer;
+        text-align: center;
+    }
+
+    #blog-post-page .social-share{
+      font-family: "Quintessential";
+    }
+
+    #blog-post-page .social-grid{
+      display: grid;
+      grid-template-areas: 
+      "LinkedIn Twitter Facebook";
+      justify-content: space-around;
+      padding: 18px;
+    }
+
+    #blog-post-page #facebookButton{
+      height: 48px;
+      width: 122px;
+      grid-area: Facebook;
+    }
+
+    #blog-post-page #twitterButton{
+      height: 44px;
+      width: 104px;
+      grid-area: Twitter;
+    }
+
+    #blog-post-page #linkedinButton{
+      height: 48px;
+      width: 114px;
+      grid-area: LinkedIn;
+    }
+
+    #blog-post-page .official-footer{
+        background-color: black;
+        position: fixed;
+        display: flex;
+        flex: wrap;
+        text-align: center;
+        justify-content: center;
+        color: white;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /*
+=============== 
+Footer And Social Share End
+===============
+*/
+
+
+/*
+=============== 
+Media Queries
+===============
+*/
+
+
+/* Mobile Portrait */
+@media only screen and (min-device-width : 50px) and (max-device-width : 766px) and (orientation: portrait) {
+  #blog-post-page .official-footer{
+    font-size: 0.80rem;
+  }
+
+  #blog-post-page .portrait-toggle{
+    color: var(--blueish-grey);
+  }
+  #blog-post-page .portrait-switch:hover{
+    transform: rotate(90);
+    color: var(--cherry-red);
+  }
+
+  #blog-post-page #facebookButton{
+    height: 12px;
+    width: 31px;
+    grid-area: Facebook;
+  }
+
+  #blog-post-page #twitterButton{
+    height: 11px;
+    width: 26px;
+    grid-area: Twitter;
+  }
+
+  #blog-post-page #linkedinButton{
+    height: 12px;
+    width: 29px;
+    grid-area: LinkedIn;
+  }
+
+  #blog-post-page .blog-content-subheading {
+    font-size: .85rem;
+}
+
+#blog-post-page p{
+    font-size: 0.65rem;
+  }
+
+  #blog-post-page h4{
+    font-size: .75rem;
+  }
+
+  #blog-post-page figure{
+    font-size: .575rem
+  }
+
+  #blog-post-page .collapse-toggle label{
+    font-size: .86rem;
+  }
+
+  #blog-post-page blockquote .bio-paragraph{
+    font-size: 0.55rem;
+  }
+  #blog-post-page .avatar{
+    height: 109px;
+    max-width: 109px;
+    width: 81%;
+    position: relative;
+    bottom: 90px;
+  }
+
+  #blog-post-page .avatar-wallpaper{
+    height: 65px;
+    width: 125px;
+  }
+
+  #blog-post-page .post-grid{
+    padding-left: 40px;
+    width: 100vw;
+  }
+
+  #blog-post-page .aside-grid{
+    width: auto;
+    position: relative;
+    bottom: 33px;
+    
+  }
+
+  #blog-post-page .aside-author-info{
+    font-size: 20px;
+  }
+
+  #blog-post-page li{
+    font-size: 13px;
+  }
+
+  #blog-post-page .bio-paragraph{
+    font-size: 0.51rem;
+  }
+
+  #blog-post-page blockquote{
+   font-size: 0.51rem;
+  }
+
+  #blog-post-page #blogHeader{
+    font-size: .85rem;
+    text-align: center;
+    /* position: relative;
+    top: 40px; */
+}
+#blog-post-page .main-blog-card{
+  margin-left: 20px;
+}
+  
+
+#blog-post-page .collapse-toggle label::after {
+    content: "";
+}
+#blog-post-page .collapsible-blog-title{
+  font-size: 0.45rem;
+
+}
+
+#blog-post-page .collapsible-blog-time{
+  font-size: 0.45rem;
+}
+
+#blog-post-page .collapsible-blog-wrap{
+  width: 90%;
+
+}
+
+#blog-post-page .collapsible-content2{
+  justify-content: space-between;
+  padding: 0%;
+}
+
+#blog-post-page #blogFooter {
+    text-align: center;
+    padding-left: 20px;
+  }
+
+  .mobileDelete{
+    display: none;
+  }
+}
+
+
+/* Mobile Landscape */
+@media only screen and (min-width : 321px) and (max-device-width : 767px) and (orientation: landscape){
+  #blog-post-page #blogAside {
+    padding-left: 35px;
+    position: relative;
+    bottom: 20px;
+}
+ 
+#blog-post-page .avatar {
+    height: 101px;
+    max-width: 94px;
+    width: 100%;
+    position: relative;
+    bottom: 92px;
+}
+#blog-post-page .avatar-wallpaper{
+    width:160px;
+  }
+
+  #blog-post-page .aside-author-info{
+    font-size: 20px;
+  }
+  #blog-post-page h1 {
+    font-size: 2.5rem;
+  }
+
+  #blog-post-page li{
+    font-size: 13px;
+  }
+
+  #blog-post-page .bio-paragraph{
+    font-size: 0.51rem;
+  }
+
+  #blog-post-page  blockquote{
+   font-size: 0.51rem;
+  }
+
+  #blog-post-page .official-footer{
+    font-size: 0.80rem;
+  }
+
+  #blog-post-page #facebookButton{
+    height: 24px;
+    width: 61px;
+  }
+
+  #blog-post-page #twitterButton{
+    height: 22px;
+    width: 52px;
+  }
+
+  #blog-post-page #linkedinButton{
+    height: 24px;
+    width: 57px;
+  }
+
+  #blog-post-page .collapsible-blog-title{
+    font-size: 0.55rem;
+}
+
+  #blog-post-page .collapsible-blog-time{
+    font-size: 0.55rem;
+  }
+
+  #blog-post-page .blog-content-subheading {
+    font-size: .95rem;
+}
+
+#blog-post-page p{
+    font-size: 0.65rem;
+  }
+
+  #blog-post-page h4{
+    font-size: .75rem;
+  }
+
+  #blog-post-page figure{
+    font-size: .575rem
+  }
+
+  .mobileDelete{
+    display: none;
+  }
+}
+
+
+/* Tablet Portarait/Landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1223px) {
+  #blog-post-page .official-footer{
+    font-size: 0.80rem;
+  }
+
+  #blog-post-page .portrait-toggle{
+    color: var(--blueish-grey);
+  }
+  #blog-post-page .portrait-switch:hover{
+    transform: rotate(90);
+    color: var(--cherry-red);
+  }
+
+  #blog-post-page #facebookButton{
+    height: 24px;
+    width: 61px;
+    grid-area: Facebook;
+  }
+
+  #blog-post-page #twitterButton{
+    height: 22px;
+    width: 52px;
+    grid-area: Twitter;
+  }
+
+  #blog-post-page #linkedinButton{
+    height: 24px;
+    width: 57px;
+    grid-area: LinkedIn;
+  }
+
+  #blog-post-page .blog-content-subheading {
+    font-size: 1rem;
+}
+
+#blog-post-page p{
+    font-size: 0.85rem;
+  }
+
+  #blog-post-page h1{
+    font-size: 2rem;
+  }
+
+  #blog-post-page h4{
+    font-size: .85rem;
+  }
+
+  #blog-post-page figure{
+    font-size: .575rem
+  }
+
+  #blog-post-page .collapse-toggle label{
+    font-size: .86rem;
+  }
+
+  #blog-post-page blockquote .bio-paragraph{
+    font-size: 0.55rem;
+  }
+  #blog-post-page .avatar{
+    height: 109px;
+    max-width: 109px;
+    width: 81%;
+    position: relative;
+    bottom: 91px;
+  }
+
+  #blog-post-page .avatar-wallpaper{
+    height: 65px;
+    width: 195px;
+  }
+
+  #blog-post-page .post-grid{
+    padding-left: 50px;
+    width: 86vw;
+    grid-gap: 20px;
+  }
+
+  #blog-post-page .aside-grid {
+    width: auto;
+    position: relative;
+    bottom: 48px;
+    left: 9px;
+}
+
+#blog-post-page #mainBlog{
+      position: relative;
+      left: 55px;
+    }
+
+    #blog-post-page .aside-author-info{
+    font-size: 1.5rem;
+  }
+
+  #blog-post-page li{
+    font-size: 13px;
+  }
+
+  #blog-post-page .bio-paragraph{
+    font-size: 0.75rem;
+  }
+
+  #blog-post-page blockquote{
+   font-size: 0.75rem;
+  }
+
+  #blog-post-page #blogHeader{
+    font-size: .85rem;
+    text-align: center;
+    position: relative;
+    left: 55px;
+}
+#blog-post-page .main-blog-card{
+    margin-left: 20px;
+}
+  
+
+#blog-post-page .collapse-toggle label::after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+#blog-post-page .collapsible-blog-title{
+  font-size: 1.15rem;
+
+}
+
+#blog-post-page .collapsible-blog-time{
+  font-size: 0.75rem;
+}
+
+#blog-post-page .collapsible-blog-wrap{
+  width: 44%;
+
+}
+
+#blog-post-page .collapsible-content2{
+  justify-content: space-between;
+  padding: 0%;
+}
+
+#blog-post-page #blogFooter {
+  text-align: center;
+   padding-left: 20px;
+   position: relative;
+   left: 55px;
+}
+}
+
+/* Laptop/Desktop */
+@media (min-device-width: 1224px) 
+  and (max-device-width: 2560px) {
+    #blog-post-page .post-grid {
+    width: 80vh;
+    margin: auto;
+   }
+
+   #blog-post-page .avatar-wallpaper {
+     width: 100%;
+     height: 80px;
+ }
+
+ #blog-post-page .avatar {
+   height: 150px;
+   width: 90%;
+   position: relative;
+   bottom: 110px;
+ }
+
+ #blog-post-page .author-socials {
+   position: relative;
+   bottom: 3em;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   font-size: 1.25rem;
+ }
+
+ #blog-post-page .aside-author-list {
+   font-size: 19px;
+ }
+
+ #blog-post-page .bio-paragraph {
+   font-size: 1rem;
+ }
+
+ #blog-post-page blockquote {
+   font-size: 1rem;
+ }
+
+ #blog-post-page h2{
+     font-size: 2.5rem;
+   }
+
+   #blog-post-page p{
+     font-size: 22px;
+   }
+
+   #blog-post-page .collapsible-blog-title .collapsible-blog-time {
+   font-size: 1.25rem;
+}
+
+#blog-post-page figure {
+     font-size: .85rem;
+   }
+
+   #blog-post-page p {
+     font-size: 22px;
+   }
+
+   #blog-post-page #linkedinButton {
+     height: 48px;
+     width: 114px;
+ }
+
+ #blog-post-page #facebookButton {
+     height: 48px;
+     width: 122px;
+ }
+
+ #blog-post-page #twitterButton {
+     height: 44px;
+     width: 104px;
+ }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

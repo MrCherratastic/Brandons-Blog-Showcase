@@ -1,0 +1,608 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+ :root {
+/*Awesome Variables */
+  --blueish-grey: hsl(209, 34%, 30%);
+  --cool-grey: hsl(210, 22%, 49%);
+  --mixem:linear-gradient(90deg, #c0c0c0, #f7e4e5);
+  --cherry-red: rgb(226,6,44);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#subscribe-page body {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  line-height: 1.5;
+  color: var(--mixem);
+ 
+}
+
+
+#subscribe-page p {
+  margin-bottom: 1.25rem;
+  color: var(--cool-grey);
+}
+
+#subscribe-page a{
+  text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  #subscribe-page h1 {
+    font-size: 4rem;
+  }
+  #subscribe-page h2 {
+    font-size: 2.5rem;
+  }
+  #subscribe-page h3 {
+    font-size: 3.75rem;
+  }
+  #subscribe-page h4 {
+    font-size: 2rem;
+  }
+
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+#subscribe-page nav {
+  background: white;
+  box-shadow: var(--light-shadow);
+}
+#subscribe-page .nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#subscribe-page .logo {
+  height: 70px;
+}
+#subscribe-page .links a {
+  color: var(--cool-grey);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+
+}
+#subscribe-page .links a:hover {
+  background: transparent;
+  color: var(--cherry-red);
+  padding-left: 1.5rem;
+}
+
+#subscribe-page .link-item{
+  text-decoration: none;
+}
+
+#subscribe-page .links{
+  height: 0;
+  overflow: hidden;
+}
+
+#subscribe-page .reveal-links{
+  height: 5rem;
+}
+
+#subscribe-page .portrait-toggle {
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+#subscribe-page .portrait-toggle:hover{
+  color: var(--cherry-red);
+  transform: rotate(90deg);
+}
+
+@media screen and (min-width: 800px) {
+  #subscribe-page .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  #subscribe-page .nav-header {
+    padding: 0;
+  }
+ 
+  #subscribe-page .links {
+    height: auto;
+    display: flex;
+    overflow: hidden;
+
+  }
+  #subscribe-page .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  #subscribe-page .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+
+  #subscribe-page .portrait-toggle{
+    display: none;
+  }
+
+ 
+}
+
+
+  /*
+=============== 
+Navbar End
+===============
+*/
+
+
+  /*
+=============== 
+Readtime Bar START
+===============
+*/
+
+
+#subscribe-page #progress-bar{
+  /*DECLARE VAR SET WIDTH VALUE TO VAR */
+    --progress: 0;
+    width: var(--progress);
+    background-color: var(--cherry-red);
+    height: 1px;
+    position: fixed;
+    box-shadow:
+    1.5px 1.5px 0 rgb(11,211,211),
+    -1px -1px 0 rgb(248,144,231),  
+    1px -1px 0 rgb(255,255,255),
+    -1px 1px 0 rgb(208,208,208),
+    1px 1px 0 rgb(0,0,0);;
+    display: flex;
+    flex: wrap;
+    bottom:0;
+    left: 0;
+    justify-content: center;
+    text-align: center;
+    /*Fix position and put infront of footer*/
+    z-index: 100;
+  }
+    /*
+  =============== 
+  Readtime Bar END
+  ===============
+  */
+
+      /*
+  =============== 
+  Return To Top
+  ===============
+  */
+
+  #subscribe-page .top-link {
+    font-size: 1.25rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background: var(--blueish-grey);
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    color: white;
+    animation: bounce 2s ease-in-out infinite;
+    visibility: hidden;
+    z-index: -100;
+  }
+
+
+  #subscribe-page .show-link {
+    visibility: visible;
+    z-index: 100;
+  }
+        /*
+  =============== 
+  Return To Top
+  ===============
+  */
+#subscribe-page .sub-grid{
+      display: grid;
+      grid-template-areas: 
+      "wallpaper form";
+      width: 100vw;
+      height: 100vh;
+      background: var(--mixem);     
+  }
+
+  
+  #subscribe-page #form-flex{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      grid-gap: 13em;
+      height: fit-content;
+      width: 100%;
+    }
+
+    #subscribe-page #subscribe-form{
+    margin-right: auto;
+    height: 100vh;
+    grid-area: form;
+    }
+
+    #subscribe-page #header{
+    height: min-content;
+    font-family: "Dancing Script";
+    }
+
+   
+
+    #subscribe-page #wallpaper-section{
+        height:100%;
+        width: 45vw;
+        grid-area: wallpaper;
+    }
+
+    #subscribe-page #footer{
+        font-family: "The Nautigal";
+        height: min-content;
+
+    }
+    
+    #subscribe-page .wallpaper-background{
+        background-image: url('https://source.unsplash.com/random/4');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    #subscribe-page .small-wallpaper{
+        background-image: url('https://source.unsplash.com/random/4');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 60%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        margin: auto;
+    }
+
+    #subscribe-page .text-wrap {
+        max-width: max-content;
+        background-color: transparent;
+      }
+
+      #subscribe-page .fab.fa-linkedin {
+        color: rgb(0, 0, 0);
+        font-size: 2rem;
+        padding: 0rem;
+        border-radius: 100%;
+        margin: 0 0 1rem 0;
+        color: darkblue;
+      }
+
+      #subscribe-page .fab.fa-youtube {
+        color: rgb(0, 0, 0);
+        font-size: 2rem;
+        padding: 0rem;
+        border-radius: 100%;
+        margin: 0 0 1rem 0;
+        color: red;
+      }
+
+      #subscribe-page .fab.fa-facebook {
+        color: rgb(0, 0, 0);
+        font-size: 2rem;
+        padding: 0rem;
+        border-radius: 100%;
+        margin: 0 0 1rem 0;
+        color: blue;
+      }
+      
+
+      #subscribe-page .text-wrap h2 {
+        color: hsl(210, 22%, 49%);
+        text-transform: uppercase;
+        font-family: "Economica";
+        margin: 0 0 1rem 0;
+        line-height: 80%;
+      }
+
+      #subscribe-page .text-wrap h1 {
+        color: black;
+        text-transform: uppercase;
+        font-family: "Economica";
+        margin: 0 0 1rem 0;
+      }
+      
+      #subscribe-page .text-wrap p {
+        font-size: 1rem;
+        font-family: "Quintessential";
+      }
+      
+      #subscribe-page ul{
+        list-style-type: none;
+      }
+
+      #subscribe-page input {
+        padding: .8rem 1rem;
+        width: 50%;
+        border: .1rem dashed black;
+       }
+
+       #subscribe-page .subscribe-button{
+        background: -webkit-linear-gradient(top, #d6159f, #d69465);
+        padding: .4rem 1rem;
+        box-shadow: var(--light-shadow);
+        text-shadow: var(--light-shadow);
+        color: white;
+        font-size: 17.4px;
+        font-family: "Quintessential", Arial, Sans-Serif;
+      
+      }
+
+      #subscribe-page .special-underline{
+        text-decoration: underline;
+        color: var(--cherry-red);
+    }
+
+    #subscribe-page .official-footer{
+        background-color: black;
+        position: fixed;
+        display: flex;
+        flex: wrap;
+        text-align: center;
+        justify-content: center;
+        color: white;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #subscribe-page .collapsible-wrap{
+      display: flex;
+      justify-content: center;
+    } 
+ /*
+=============== 
+Queries
+===============
+*/
+/* Mobile Portrait */
+@media only screen and (min-device-width : 50px) and (max-device-width : 766px) and (orientation: portrait) {
+  #subscribe-page #smallpic{
+    display: none;
+  }
+
+  #subscribe-page p {
+    text-align: center;
+  }
+
+  #subscribe-page #footer, #header, #social-icons{
+    display: none;
+ }
+
+ #subscribe-page #form-card {
+  padding-left: 11px;
+  position: relative;
+  top: 8em;
+}
+
+#subscribe-page .subscribe-button{
+  width: 94%;
+}
+
+#subscribe-page #email-label{
+  width: 94%;
+}
+
+#subscribe-page .text-wrap h1{
+  text-align: center;
+}
+
+#subscribe-page .text-wrap h2{
+  text-align: center;
+}
+
+#subscribe-page .official-footer{
+  font-size: 0.80rem;
+}
+}
+
+
+/* Mobile Landscape */
+@media only screen and (min-width : 321px) and (max-device-width : 767px) and (orientation: landscape){
+  #subscribe-page #footer, #header, #social-icons{
+    display: none;
+ }
+
+ #subscribe-page  #form-card{
+   position: relative;
+   top: 6em;
+ }
+
+ #subscribe-page #subscribe-form{
+   padding-left: 55px;
+ }
+}
+
+/* iPad/iPad Mini in portrait only */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+  #subscribe-page #social-icons{
+      display: none;
+  }
+
+  #subscribe-page #form-card{
+    position: relative;
+    top: 1em;
+    padding-left: 55px;
+  }
+
+  #subscribe-page #smallpic{
+    display: none;
+  }
+
+  #subscribe-page h4 {
+    font-size: 2rem;
+  }
+
+  #subscribe-page h3{
+    font-size:2.5rem;
+  }
+  
+  #subscribe-page h2{
+    font-size:2.5rem;
+  }
+  
+  #subscribe-page  h1{
+    font-size:4rem;
+  }
+  
+  #subscribe-page p{
+    font-size: 1rem;
+  }
+  
+}
+
+/*Mobile/Tablet Devices LAndscape*/
+@media screen and (min-device-width: 481px) 
+  and (max-device-width: 768px)
+  and (orientation: landscape){ 
+
+    #subscribe-page #smallpic, #footer, #header, #social-icons{
+      display: none;
+  }
+
+  #subscribe-page #form-card{
+      line-height: 33px;
+    }
+
+    #subscribe-page #subscribe-form{
+      padding-left: 55px;
+    }
+
+    #subscribe-page h4 {
+      font-size: 2rem;
+    }
+
+    #subscribe-page h3{
+      font-size:2.5rem;
+    }
+    
+    #subscribe-page h2{
+      font-size:2.5rem;
+    }
+    
+    #subscribe-page h1{
+      font-size:4rem;
+    }
+    
+    #subscribe-page p{
+      font-size: 1rem;
+    }
+    
+}
+  
+/*Tablet/Laptop Devices Landscape*/
+@media(min-device-width: 769px) 
+  and (max-device-width: 1023px)
+  and (orientation: landscape) {
+    #subscribe-page #smallpic,#footer, #header, #social-icons{
+      display: none;
+   }
+
+   #subscribe-page #form-card{
+    position: relative;
+    top: 6em;
+    line-height: 45px;
+  }
+
+  #subscribe-page h4 {
+    font-size: 2rem;
+  }
+
+  #subscribe-page  h3{
+    font-size:2.5rem;
+  }
+  
+  #subscribe-page h2{
+    font-size:2.5rem;
+  }
+  
+  #subscribe-page h1{
+    font-size:4rem;
+  }
+  
+  #subscribe-page p{
+    font-size: 1rem;
+  }
+}
+
+/*Desktop Devices*/
+@media (min-device-width: 1024px) 
+  and (max-device-width: 1200px) {
+    #subscribe-page #footer, #header, #social-icons{
+      display: none;
+   }
+
+   #subscribe-page #form-card{
+      position: relative;
+      top: 12em;
+    }
+}
+
+/*Desktop Devices*/
+@media (min-device-width: 1201px) 
+  and (max-device-width: 2560px) {
+    #subscribe-page #social-icons{
+      display: block;
+      position: relative;
+      bottom: 8em;
+  }
+
+  #subscribe-page #form-flex{
+    position: relative;
+    top: 9em;
+  }
+}
+/*
+=============== 
+Queries End
+===============
+*/
